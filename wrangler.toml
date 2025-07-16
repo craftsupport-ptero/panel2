@@ -1,0 +1,43 @@
+name = "pterodactyl-panel-worker"
+main = "src/index.ts"
+compatibility_date = "2024-01-15"
+
+# Worker configuration
+send_metrics = false
+usage_model = 'bundled'
+
+[env.development]
+name = "pterodactyl-panel-worker-dev"
+
+[env.production]
+name = "pterodactyl-panel-worker"
+
+# KV namespaces for session and rate limiting storage
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "sessions_namespace"
+preview_id = "sessions_preview"
+
+[[kv_namespaces]]
+binding = "RATE_LIMITS"
+id = "rate_limits_namespace"
+preview_id = "rate_limits_preview"
+
+# D1 database for user storage
+[[d1_databases]]
+binding = "DB"
+database_name = "pterodactyl_panel"
+database_id = "pterodactyl_panel_db"
+
+# Environment variables
+[vars]
+JWT_EXPIRES_IN = "15m"
+JWT_REFRESH_EXPIRES_IN = "7d"
+BCRYPT_ROUNDS = "12"
+RATE_LIMIT_REQUESTS = "100"
+RATE_LIMIT_WINDOW = "900"
+ENVIRONMENT = "development"
+
+# Secrets (to be set via wrangler secret)
+# JWT_SECRET
+# DATABASE_URL (if needed)

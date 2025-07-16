@@ -1,0 +1,17 @@
+# Worker-specific files
+/src/node_modules/
+/src/.wrangler/
+/src/dist/
+/src/.env.worker
+*.log
+
+# Keep original Laravel files intact
+!/app/
+!/config/
+!/database/
+!/resources/
+!/routes/
+!/public/
+!/bootstrap/
+!/storage/
+!/tests/
