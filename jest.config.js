@@ -19,6 +19,7 @@ module.exports = {
     },
     setupFilesAfterEnv: [
         '<rootDir>/resources/scripts/setup-tests.ts',
+        '<rootDir>/src/tests/setup.ts',
     ],
     transform: {
         '.*\\.[t|j]sx$': 'babel-jest',
