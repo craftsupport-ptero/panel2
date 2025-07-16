@@ -1,0 +1,40 @@
+name = "pterodactyl-panel"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[env.development]
+name = "pterodactyl-panel-dev"
+
+[env.staging]
+name = "pterodactyl-panel-staging"
+
+[env.production]
+name = "pterodactyl-panel-prod"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pterodactyl_panel"
+database_id = "your-database-id"
+migrations_dir = "drizzle/migrations"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-kv-namespace-id"
+preview_id = "your-kv-preview-id"
+
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "pterodactyl-storage"
+preview_bucket_name = "pterodactyl-storage-preview"
+
+[vars]
+ENVIRONMENT = "development"
+JWT_SECRET = "your-jwt-secret-here"
+BCRYPT_ROUNDS = "12"
+API_RATE_LIMIT = "100"
+SESSION_TIMEOUT = "7200"
+
+# Production environment overrides
+[env.production.vars]
+ENVIRONMENT = "production"
