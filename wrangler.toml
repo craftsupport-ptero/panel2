@@ -1,0 +1,40 @@
+name = "pterodactyl-panel-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[env.production]
+name = "pterodactyl-panel-api"
+
+[env.development]
+name = "pterodactyl-panel-api-dev"
+
+# D1 Database binding
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "pterodactyl-panel"
+database_id = "your-d1-database-id"
+
+[[env.development.d1_databases]]
+binding = "DB"
+database_name = "pterodactyl-panel-dev"
+database_id = "your-d1-database-id-dev"
+
+# R2 Storage binding for avatars
+[[env.production.r2_buckets]]
+binding = "AVATARS"
+bucket_name = "pterodactyl-avatars"
+
+[[env.development.r2_buckets]]
+binding = "AVATARS"
+bucket_name = "pterodactyl-avatars-dev"
+
+# Environment variables
+[env.production.vars]
+ENVIRONMENT = "production"
+JWT_SECRET = "your-jwt-secret"
+BCRYPT_ROUNDS = "12"
+
+[env.development.vars]
+ENVIRONMENT = "development"
+JWT_SECRET = "dev-jwt-secret"
+BCRYPT_ROUNDS = "10"

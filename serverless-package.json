@@ -1,0 +1,24 @@
+{
+  "name": "pterodactyl-panel-serverless",
+  "version": "1.0.0",
+  "description": "Serverless API for Pterodactyl Panel User Management",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test:serverless": "jest --testPathPattern=src/",
+    "lint:serverless": "eslint src/**/*.ts",
+    "build:serverless": "tsc && wrangler deploy --dry-run"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.5",
+    "wrangler": "^3.22.1"
+  }
+}
