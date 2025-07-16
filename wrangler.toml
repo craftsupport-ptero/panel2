@@ -1,0 +1,39 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "pterodactyl-panel"
+main = "src/index.ts"
+compatibility_date = "2024-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+[env.development]
+vars = { ENVIRONMENT = "development" }
+
+[env.staging]
+vars = { ENVIRONMENT = "staging" }
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+# Database configuration
+[[d1_databases]]
+binding = "DB"
+database_name = "pterodactyl"
+database_id = ""  # Will be populated during setup
+
+# KV namespace for caching and sessions
+[[kv_namespaces]]
+binding = "CACHE"
+id = ""  # Will be populated during setup
+preview_id = ""
+
+# R2 bucket for file storage
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "pterodactyl-storage"
+preview_bucket_name = "pterodactyl-storage-preview"
+
+# Environment variables
+[vars]
+JWT_SECRET = "your-jwt-secret-here"
+BCRYPT_ROUNDS = "12"
+API_RATE_LIMIT = "100"
+CORS_ORIGINS = "*"
