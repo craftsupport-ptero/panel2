@@ -35,3 +35,12 @@ resources/lang/locales.js
 /public/build
 /public/hot
 result
+
+# Serverless build artifacts
+/dist
+.wrangler
+wrangler.toml.backup
+
+# Temporary files
+/tmp
+.cache
