@@ -23,7 +23,7 @@ public/assets/manifest.json
 .dockerignore
 docker-compose.*
 !docker-compose.example.yml
-!docker-compose.example.yaml
+!docker-compose.example.example.yaml
 
 # for image related files
 misc
@@ -35,3 +35,10 @@ resources/lang/locales.js
 /public/build
 /public/hot
 result
+
+# TypeScript/Node.js build artifacts
+src/dist/
+src/coverage/
+src/node_modules/
+src/package-lock.json
+*.tsbuildinfo
