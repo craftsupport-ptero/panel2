@@ -35,3 +35,24 @@ resources/lang/locales.js
 /public/build
 /public/hot
 result
+
+# Serverless specific
+/dist
+/build
+/.wrangler
+.dev.vars
+.env.local
+.env.production
+
+# Migration exports
+pterodactyl_export.json
+/tmp
+
+# Test coverage
+/coverage
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
