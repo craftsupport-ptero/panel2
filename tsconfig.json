@@ -39,7 +39,8 @@
     ]
   },
   "include": [
-    "./resources/scripts/**/*"
+    "./resources/scripts/**/*",
+    "./src/**/*"
   ],
   "exclude": [
     "/node_modules/"
